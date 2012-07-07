@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        {% block css %}
+            <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+        {% endblock %}
+        {% block javascript %}
+            <script type="text/javascript" src="/static/js/jquery-1.7.min.js"></script>
+            <script type="text/javascript">
+
+            </script>
+        {% endblock %}
+
+        <title>{% block title %}{{ title|default:"AreaConnect" }}{% endblock %}</title>
+
+</head>
+    <body>
+        <div class="container">
+            <div class="content">
+               landing page
+               <form method="POST" action=".">
+                <label for="company_name">Company name</label>
+                    <input type="text" name="company_name">
+                <label for="email">Email</label>
+                    <input type="text" name="email">
+                <label for="postal_code">Postal code</label>
+                    <input type="text" name="postal_code">
+
+
+                <input type="submit" value="Send" class="btn">
+               </form>
+            </div>
+        </div>
+</body>
+
+<footer>
+        <div class="container">
+        <hr>
+        <p>&copy; 2012 Created by <strong>AreaConnect</strong></a></p>
+</div>
+    </footer>
+
+</html>
