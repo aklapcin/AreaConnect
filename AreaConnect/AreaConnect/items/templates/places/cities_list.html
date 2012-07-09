@@ -1,0 +1,29 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="row">
+    <div class="span8">
+        <p>List of cities</p>
+        <ul>
+        {% for city in cities%}
+            <li>
+                <ul>
+                {{city.name}}
+
+
+                {%for district in city.districts.all%}
+                    <li>
+                            <a href="{% url district_retails city_slug=city.slug district_slug=district.slug%}">
+                                {{district.name}}
+                            </a>
+                    </li>
+                {%endfor%}
+                </ul>
+            </li>
+        {% endfor%}
+        </ul>
+    </div>
+    <div class="span4">
+    </div>
+
+</div>
+{%endblock content%}

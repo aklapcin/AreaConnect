@@ -1,5 +1,15 @@
-{%extends "places/districts_base.html"%}
-
+{%extends "places/district_base.html"%}
 {% block district_content%}
+<div class="span8">
 
+
+{%for item in items%}
+    {% include "places/retail_big_entry.html"%}
+{%endfor%}
+</div>
+<div class="span4">
+    {%for event in events%}
+        {% include "places/event_small_entry.html"%}
+    {%endfor%}
+    </div >
 {% endblock district_content%}

@@ -1,14 +1,52 @@
 {% extends "minimal.html"%}
 
+{%block custom_css%}
+<link href="/static/css/landing.css" rel="stylesheet">
+{%endblock custom_css%}
+
 {% block whole_content%}
-   landing page
-   <form method="POST" action=".">
-    <label for="company_name">Company name</label>
-        <input type="text" name="company_name">
-    <label for="email">Email</label>
-        <input type="text" name="email">
-    <label for="postal_code">Postal code</label>
-        <input type="text" name="postal_code">
-    <input type="submit" value="Send" class="btn">
-   </form>
+
+<div class="header">
+  <img id="logo" src="/static/img/logo.jpg" title="Wijk Connect" alt="Wijk Connect"/>
+  <p>
+    Kent u uw huidige klanten bij gezicht? <br/>
+    Zou u graag nieuwe klanten beriken?
+  </p>
+</div>
+
+<div class="hero-unit">
+  <h1>Bereik nieuwe klanten in uw buurt.</h1>
+  <p>Meld u alvast ann.</p>
+  <br/>
+  <div class="row">
+    <div class="span6">
+      <form class="form-horizontal" action="." method="POST">
+        <fieldset>
+          {% csrf_token %}
+          <div class="control-group">
+            <label class="control-label" for="company">Bedrijisnaam</label>
+            <div class="controls">
+              <input type="text" class="input" id="company" name="company_name">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="company">Postcode</label>
+            <div class="controls">
+              <input type="text" class="input" id="postal_code" name="postal_code">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="company">Email</label>
+            <div class="controls">
+              <input type="text" class="input" id="email" name="email">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-success" type="submit">Aanmelden</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
 {%endblock whole_content%}

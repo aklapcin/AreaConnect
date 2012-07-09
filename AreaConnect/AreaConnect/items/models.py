@@ -24,6 +24,8 @@ class Event(models.Model):
     name = models.CharField(max_length=100)
     short_desc = models.TextField()
     long_desc = models.TextField()
+    date = models.DateField()
+    place = models.CharField(max_length=300)
 
 
 class People(models.Model):
